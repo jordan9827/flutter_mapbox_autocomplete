@@ -81,8 +81,7 @@ class MapBoxPlace {
         type: json["type"] == null ? null : featureTypeValues.map[json["type"]],
         placeType: json["place_type"] == null
             ? []
-            : new List<PlaceType>.from(
-                json["place_type"].map((x) => placeTypeValues.map[x])),
+            : [],
         // relevance: json["relevance"] == null ? null : json["relevance"],
         properties: json["properties"] == null
             ? null
