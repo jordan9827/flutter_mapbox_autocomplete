@@ -80,7 +80,7 @@ class MapBoxPlace {
         id: json["id"] == null ? null : json["id"],
         type: json["type"] == null ? null : featureTypeValues.map[json["type"]],
         placeType: json["place_type"] == null
-            ? null
+            ? []
             : new List<PlaceType>.from(
                 json["place_type"].map((x) => placeTypeValues.map[x])),
         // relevance: json["relevance"] == null ? null : json["relevance"],
@@ -90,16 +90,16 @@ class MapBoxPlace {
         text: json["text"] == null ? null : json["text"],
         placeName: json["place_name"] == null ? null : json["place_name"],
         bbox: json["bbox"] == null
-            ? null
+            ? []
             : new List<double>.from(json["bbox"].map((x) => x.toDouble())),
         center: json["center"] == null
-            ? null
+            ? []
             : new List<double>.from(json["center"].map((x) => x.toDouble())),
         geometry: json["geometry"] == null
             ? null
             : Geometry.fromJson(json["geometry"]),
         context: json["context"] == null
-            ? null
+            ? []
             : new List<Context>.from(
                 json["context"].map((x) => Context.fromJson(x))),
         matchingText:
